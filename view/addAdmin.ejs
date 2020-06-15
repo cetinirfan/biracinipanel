@@ -1,0 +1,57 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-user"></i>  Yönetici Ekle</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Yönetici Ekle</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title">YÖNETİCİ KAYIT</h4>
+                                        <hr>
+                                        <form action='/admins/register/' method='POST' enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="image">Resim</label>
+                                                <input name='image' type="file" id="image" class="dropify" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="adminFullName">Adı Soyadı</label>
+                                                <input name='adminFullName' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ad Soyad Giriniz...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="mail">E-Mail</label>
+                                                <input name='mail' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Giriniz...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="telephone">Telefon</label>
+                                                <input name='telephone' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telefon Giriniz...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Şifre</label>
+                                                <input name='password' type="password" class="form-control" id="exampleInputPassword1" placeholder="Şifre Giriniz...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password2">Şifre Tekrar</label>
+                                                <input name='password2' type="password" class="form-control" id="exampleInputPassword1" placeholder="Şifre Giriniz...">
+                                            </div>
+                                            <button name="action" type="submit" class="btn btn-primary">Kaydet</button>
+                                        </form>                                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<%- include('./src/footer'); %>

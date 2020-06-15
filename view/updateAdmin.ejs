@@ -1,0 +1,45 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-user"></i>  Admin Düzenle</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="/admins/admins/">Yönetici Yönet</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Admin Düzenle</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title">YÖNETİCİ DÜZENLEME</h4>
+                                        <hr>
+                                        <form action='/admins/updateProfile/<%=find_admin._id%>' method='POST'> 
+                                        <label for="exampleInputEmail1">Resim</label>
+                                        <input type="file" id="input-file-now" class="dropify" />
+                                        <br>
+                                            <div class="form-group">
+                                                <label for="mail">E-Mail</label>
+                                                <input name='mail' type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="E-Mail Giriniz..." value='<%= find_admin.mail%>'>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="telephone">Telefon</label>
+                                                <input name='telephone' type="email" class="form-control" id="telephone" aria-describedby="emailHelp" placeholder="Telefon Giriniz..."value='<%= find_admin.telephone%>'>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Düzenle</button>
+                                        </form>                                                  
+                                    </div><!--end card-body-->
+                                </div><!--end card-->
+                            </div><!--end col-->
+                        </div>
+                    </div>
+                </div>
+<%- include('./src/footer'); %>

@@ -1,0 +1,59 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-store"></i> Cevap Bekleyen Fallar</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Cevap Bekleyen Fallar</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title"><%= title %></h4>
+                                        <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Adı Soyadı</th>
+                                                    <th>Meslek</th>
+                                                    <th>Cinsiyet</th>
+                                                    <th>Doğum Tarihi</th>
+                                                    <th>Fal Oluşturma Tarihi</th>
+                                                    <th>İşlemler</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <% find_fortune.forEach(function(fortune){ %>                           
+                                                    <tr>
+                                                            <td>
+                                                                <img src="<%= fortune.fortunePhoto %>" class="rounded-circle thumb-sm mr-1" /> <%= fortune.fullName%></a>
+                                                            </td>
+                                                            <td><%= fortune.job %></td>
+                                                            <td><%= fortune.gender %></td>
+                                                            <td><%= fortune.birthday %></td>
+                                                            <td><%= moment(fortune.fortuneCreated).format("DD MM YYYY , h:mm:ss"); %></td>
+                                                            <td>
+                                                                <a href="../deleteFortune/<%= fortune._id %>" class="btn btn-sm btn-warning"><i class="fas fa-trash"></i></a>
+                                                                <a href="../fortune_profile/<%= fortune._id %>" class="btn btn-sm btn-dark"><i class="fas fa-edit"></i></a>
+                                                            </td>
+                                                        </tr> 
+                                                  <% }); %> 
+                                            </tbody>
+                                        </table>
+            
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div>
+                    </div>
+                </div>
+<%- include('./src/footer'); %>

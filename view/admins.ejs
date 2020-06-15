@@ -1,0 +1,60 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-user"></i>  Yöneticiler</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Yöneticiler</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+    <div class="page-content">
+        <div class="container-fluid"> 
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title"><%= title %></h4>
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th>Adı Soyadı</th>
+                                    <th>Telefon</th>
+                                    <th>E-Mail</th>
+                                    <th>Engellediği Kullanıcı</th>
+                                    <th>Kayıt Tarihi</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% find_admin.forEach(function(admin){ %>                           
+                                    <tr>
+                                            <td>
+                                                <img src="<%= admin.profilePhoto %>" class="rounded-circle thumb-sm mr-1" /> <%= admin.adminFullName%></a>
+                                            </td>
+                                            <td><%= admin.telephone %></td>
+                                            <td><%= admin.mail %></td>
+                                            <td><%= admin.bannedUser.length %></td>
+                                            <td><%= moment(admin.adminCreated).format("DD MM YYYY"); %></td>
+                                            <td>
+                                                <a href="../deleteAdmin/<%= admin._id %>" class="btn btn-sm btn-warning"><i class="fas fa-trash"></i></a>
+                                                <a href="../updateProfile/<%= admin._id %>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                                            </td>
+                                        </tr> 
+                                  <% }); %> 
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div>
+        </div><!-- container -->
+    </div>
+<%- include('./src/footer'); %>
+

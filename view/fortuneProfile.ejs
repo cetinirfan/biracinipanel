@@ -1,0 +1,37 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-store"></i>  Fal Cevapla</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="/operatings/operatings/">Cevaplanmış Fallar</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);"> Fal Cevapla</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title">FAL CEVAPLA</h4>
+                        <form action='/fortunes/answerFortune/<%=find_fortune._id%>' method='POST'>
+                            <div class="form-group">
+                                <textarea required="" name='fortuneAnswer' id='tb' class="form-control" value='<%= find_fortune.mail%>' placeholder="Fal Cevabı Giriniz..." rows="5"></textarea>
+                            </div>
+                            <button name="action" type="submit" class="btn btn-primary">Gönder</button>
+                        </form>                                                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./src/footer'); %>
+                        
