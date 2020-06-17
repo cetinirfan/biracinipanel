@@ -2,11 +2,11 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="page-title-box">
-            <h4 class="page-title mb-2"><i class="dripicons-store"></i> Cevaplanmış Fallar</h4>  
+            <h4 class="page-title mb-2"><i class="dripicons-user-group"></i>  Promosyon Kodları</h4>  
             <div class="">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Cevaplanmış Fallar</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Promosyon Kodları</a></li>
                 </ol>
             </div>                                      
         </div>
@@ -23,32 +23,27 @@
                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                 <tr>
-                                    <th>Adı Soyadı</th>
-                                    <th>Meslek</th>
-                                    <th>Cinsiyet</th>
-                                    <th>Doğum Tarihi</th>
-                                    <th>Fal Oluşturma Tarihi</th>
+                                    <th>Kod</th>
+                                    <th>Kod Sayısı</th>
+                                    <th>Fal Hakkı</th>
+                                    <th>Oluşturma Tarihi</th>
                                     <th>İşlemler</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <% find_fortune.forEach(function(fortune){ %>                           
+                                <% find_promotion.forEach(function(promotion){ %>                           
                                     <tr>
+                                            <td><%= promotion.promotionCode%></td>
+                                            <td><%= promotion.promotionCount %></td>
+                                            <td><%= promotion.promotionRights %></td>
+                                            <td><%= moment(promotion.promotionCreated).format("DD MM YYYY - h:mm:ss"); %></td>
                                             <td>
-                                                <img src="<%= fortune.fortunePhoto %>" class="rounded-circle thumb-sm mr-1" /> <%= fortune.fullName%></a>
-                                            </td>
-                                            <td><%= fortune.job %></td>
-                                            <td><%= fortune.gender %></td>
-                                            <td><%= fortune.birthday %></td>
-                                            <td><%= moment(fortune.fortuneCreated).format("DD MM YYYY - h:mm:ss"); %></td>
-                                            <td>
-                                                <a href="../deleteFortune/<%= fortune._id %>" class="btn btn-sm btn-warning"><i class="fas fa-trash"></i></a>
+                                                <a href="../deletePromotion/<%= promotion._id %>" class="btn btn-sm btn-warning"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr> 
                                   <% }); %> 
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div> <!-- end col -->

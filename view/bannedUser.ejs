@@ -25,7 +25,6 @@
                                 <tr>
                                     <th>Adı Soyadı</th>
                                     <th>Telefon</th>
-                                    <th>Mail</th>
                                     <th>Doğum Tarihi</th>
                                     <th>Cinsiyet</th>
                                     <th>Kayıt Tarihi</th>
@@ -37,7 +36,6 @@
                                     <tr>
                                         <td><%= user.fullName%></td>
                                         <td><%= user.telephone %></td>
-                                        <td><%= user.mail %></td>
                                         <td><%= user.birthday && user.birthday  %></td>
                                         <td><%= user.gender == 1 ? 'Kadın' : 'Erkek' %></td>
                                         <td><%= moment(user.userCreated).format("DD MM YYYY"); %></td>

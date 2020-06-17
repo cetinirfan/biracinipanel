@@ -40,7 +40,7 @@
                                                             <td><%= fortune.job %></td>
                                                             <td><%= fortune.gender %></td>
                                                             <td><%= fortune.birthday %></td>
-                                                            <td><%= moment(fortune.fortuneCreated).format("DD MM YYYY , h:mm:ss"); %></td>
+                                                            <td><%= moment(fortune.fortuneCreated).format("DD MM YYYY - h:mm:ss"); %></td>
                                                             <td>
                                                                 <a href="../deleteFortune/<%= fortune._id %>" class="btn btn-sm btn-warning"><i class="fas fa-trash"></i></a>
                                                                 <a href="../fortune_profile/<%= fortune._id %>" class="btn btn-sm btn-dark"><i class="fas fa-edit"></i></a>

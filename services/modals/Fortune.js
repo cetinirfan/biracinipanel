@@ -25,11 +25,17 @@ const Fortune = new Schema({
     fortunePhoto:{
         type:String,
     },
+    fortuneAnswerTitle:{
+        type:String,
+    },
     fortuneAnswer:{
         type:String,
     },
     fortuneComment:{
         type:String,
+    },
+    commentCreated:{
+        type:Date,
     },
     fortuneRating:{
         type:Number,

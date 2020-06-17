@@ -1,0 +1,71 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-user"></i>  Resimleri Düzenle</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Resimleri Düzenle</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title">FAL CİNİ</h4>
+                                        <hr>
+                                        <form action='/application/uploadFortune/' method='POST' enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="image">Resim</label>
+                                                <input name='image' type="file" id="image" class="dropify" />
+                                            </div>
+                                            <button name="action" type="submit" class="btn btn-primary">Değiştir</button>
+                                        </form>                                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title">HIZLANDIRMA CİNİ</h4>
+                                        <hr>
+                                        <form action='/application/uploadSpeed/' method='POST' enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="image">Resim</label>
+                                                <input name='image' type="file" id="image" class="dropify" />
+                                            </div>
+                                            <button name="action" type="submit" class="btn btn-primary">Değiştir</button>
+                                        </form>                                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title">ARPA CİNİ</h4>
+                                        <hr>
+                                        <form action='/application/uploadBarley/' method='POST' enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="image">Resim</label>
+                                                <input name='image' type="file" id="image" class="dropify" />
+                                            </div>
+                                            <button name="action" type="submit" class="btn btn-primary">Değiştir</button>
+                                        </form>                                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<%- include('./src/footer'); %>

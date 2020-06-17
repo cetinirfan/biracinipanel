@@ -32,6 +32,8 @@ app.use("/fortunes", require('./routes/fortunes.js'))
 app.use("/admins", require('./routes/admins.js'))
 app.use("/users", require('./routes/users.js'))
 app.use("/login", require('./routes/login.js'))
+app.use("/promotion", require('./routes/promotion.js'))
+app.use("/application", require('./routes/application.js'))
 
 
 var server = http.createServer(app);

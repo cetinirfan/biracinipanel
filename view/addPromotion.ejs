@@ -1,0 +1,45 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-user"></i>  Promosyon Kodu Ekle</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Promosyon Kodu Ekle</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mt-0 header-title">PROMOSYON KODU OLUŞTUR</h4>
+                                        <hr>
+                                        <form action='/promotion/addPromotion/' method='POST'>
+                                            <div class="form-group">
+                                                <label for="promotionCode">Kod Adı</label>
+                                                <input name='promotionCode' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dağıtılıcak Kod Adı...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="promotionCount">Kod Sayısı</label>
+                                                <input name='promotionCount' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Dağıtılıcak Kod Sayısı...">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="promotionRights">Fal Hakkı</label>
+                                                <input name='promotionRights' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kodun Sağlayacağı Fal Hakkı...">
+                                            </div>
+                                            <button name="action" type="submit" class="btn btn-primary">Oluştur</button>
+                                        </form>                                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<%- include('./src/footer'); %>

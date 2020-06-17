@@ -1,0 +1,53 @@
+<%- include('./src/header'); %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <h4 class="page-title mb-2"><i class="dripicons-inbox"></i> Fal Yorumları</h4>  
+            <div class="">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Bira Cini</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Fal Yorumları</a></li>
+                </ol>
+            </div>                                      
+        </div>
+    </div>
+</div>
+<%- include('./src/sidebar'); %>
+    <div class="page-content">
+        <div class="container-fluid"> 
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title"><%= title %></h4>
+                            <table id="footable-2" class="table mb-0" data-filtering="false"  data-show-toggle="true">
+                                <thead>
+                                    <tr>
+                                        <th>Telefon</th>
+                                        <th>Fal Puanı</th>
+                                        <th>Gönderim Tarihi</th>
+                                        <th>İşlemler</th>
+                                        <th data-breakpoints="all" data-title="Fal Yorumu">Fal Yorumu</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% find_fortune.forEach(function(fortune){ %>                           
+                                        <tr>
+                                                <td><%= fortune.telephone %></td>
+                                                <td><%= fortune.fortuneRating %></td>
+                                                <td><%= moment(fortune.commentCreated).format("DD MM YYYY"); %></td>
+                                                <td>
+                                                    <a href="../../fortune/deleteFeedBack/<%= fortune._id %>" class="btn btn-sm btn-warning"><i class="fas fa-trash"></i></a>
+                                                </td>
+                                                <td><%= fortune.fortuneComment %></td>
+                                            </tr> 
+                                      <% }); %> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('./src/footer'); %>
