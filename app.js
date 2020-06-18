@@ -24,7 +24,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
-
+app.use('/uploads', express.static('uploads'))
 app.use(express.static(__dirname+'/public'))
 
 app.use("/", require('./routes/index.js'))

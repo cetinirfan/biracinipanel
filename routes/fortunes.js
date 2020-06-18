@@ -18,6 +18,23 @@ router.get('/fortunes',verifyToken,(req,res)=>{
     });
 });
 
+router.get('/fortuneComment',verifyToken,(req,res)=>{
+    Fortune.find({fortuneType:1},(err,find_fortune)=>{
+            if(find_fortune.fortuneComment != ''){
+                if(err){
+                    return res.render('error.ejs');
+                }
+                res.render('fortuneComment.ejs',{
+                    find_fortune,
+                    moment,
+                    title:'Yorumlanan Fallar'
+                })
+            }else{
+                console.log(err)
+            }
+        });
+});
+
 router.get('/fortune_profile/:_id',verifyToken,(req,res)=>{
     Fortune.findOne({ _id: req.params._id },(err,find_fortune)=>{
         if(err){

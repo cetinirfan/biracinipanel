@@ -44,6 +44,12 @@ const Fortune = new Schema({
     fortuneUser:{
         type: mongoose.Types.ObjectId
     },
+    userFullName:{
+        type:String,
+    },
+    userTelephone:{
+        type:String,
+    },
     fortuneCreated:{
         type:Date,
         default:Date.now()

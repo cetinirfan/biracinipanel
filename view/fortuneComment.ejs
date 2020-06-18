@@ -23,6 +23,7 @@
                             <table id="footable-2" class="table mb-0" data-filtering="false"  data-show-toggle="true">
                                 <thead>
                                     <tr>
+                                        <th>Adı Soyadı</th>
                                         <th>Telefon</th>
                                         <th>Fal Puanı</th>
                                         <th>Gönderim Tarihi</th>
@@ -33,11 +34,55 @@
                                 <tbody>
                                     <% find_fortune.forEach(function(fortune){ %>                           
                                         <tr>
-                                                <td><%= fortune.telephone %></td>
-                                                <td><%= fortune.fortuneRating %></td>
+                                                <td><%= fortune.userFullName %></td>
+                                                <td><%= fortune.userTelephone %></td>
+                                                <td><% if(fortune.fortuneRating==0){ %>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    
+                                                    <% } %>
+                                                    <% if(fortune.fortuneRating==1){ %>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    
+                                                    <% } %>
+                                                <% if(fortune.fortuneRating==2){ %>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <% } %> 
+                                                <% if(fortune.fortuneRating==3){ %>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <% } %> 
+                                                <% if(fortune.fortuneRating==4){ %>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice5.png" height="30" width="30"></img>
+                                                    <% } %> 
+                                                <% if(fortune.fortuneRating==5){ %>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <img src="/assets/images/Slice4.png" height="30" width="30"></img>
+                                                    <% } %> </td>
                                                 <td><%= moment(fortune.commentCreated).format("DD MM YYYY"); %></td>
                                                 <td>
-                                                    <a href="../../fortune/deleteFeedBack/<%= fortune._id %>" class="btn btn-sm btn-warning"><i class="fas fa-trash"></i></a>
+                                                    <a href="../../fortune/deleteComment/<%= fortune._id %>" class="btn btn-sm btn-warning"><i class="fas fa-eye"></i></a>
                                                 </td>
                                                 <td><%= fortune.fortuneComment %></td>
                                             </tr> 
