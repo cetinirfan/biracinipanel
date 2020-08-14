@@ -52,7 +52,6 @@ const Fortune = new Schema({
     },
     fortuneCreated:{
         type:Date,
-        default:Date.now()
     }
 });
 

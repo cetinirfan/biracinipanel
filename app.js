@@ -34,7 +34,9 @@ app.use("/users", require('./routes/users.js'))
 app.use("/login", require('./routes/login.js'))
 app.use("/promotion", require('./routes/promotion.js'))
 app.use("/application", require('./routes/application.js'))
+app.use("/readyFortune", require('./routes/readyFortune.js'))
+app.use("/notification", require('./routes/notification.js'))
 
 
 var server = http.createServer(app);
-server.listen(80);
+server.listen(3000);

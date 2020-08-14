@@ -99,7 +99,7 @@ var storage = multer.diskStorage({
       if(err){
           return res.render('error.ejs');
       }
-      return res.send("<script> alert('Güncelleme işlemi başarılı.'); window.location = '/application/sendFortune/'; </script>")
+      return res.send("<script> alert('Güncelleme işlemi başarılı.'); window.location = '/application/sendFortune/5eea5f10c2ab1908e98b8a41'; </script>")
     });
 });
 

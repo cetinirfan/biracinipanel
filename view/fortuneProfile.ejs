@@ -69,8 +69,9 @@
                                 <div class="col-lg-10">
                                     <select class="form-control"  name="" id="ad">
                                         <option value="">Fal Seç</option>
-                                        <option value="Fal 1 İçerik">Fal 1</option>
-                                        <option value="Fal 2 İçerik">Fal 2</option>
+                                        <% find_readyFortune.forEach(function(readyFortune){ %>  
+                                            <option value="<%= readyFortune.readyFortune%>"><%= readyFortune.readyFortuneDescription%></option>
+                                        <% }); %> 
                                     </select>
                                 </div>
                                 <div class="col-lg-2">

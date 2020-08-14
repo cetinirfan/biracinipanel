@@ -25,6 +25,10 @@ const Users = new Schema({
         type:String,
         default:2
     },
+    oneSignal:{
+        type:String,
+        default:'a'
+    },
     mail:{
         type:String
     },
